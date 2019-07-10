@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Supplier
+Bundle-SymbolicName: com.sa.Supplier
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.sa.supplier.Activator
+Bundle-Vendor: SA
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.core.resources,
+ org.osgi.framework;version="1.3.0"
+Export-Package: com.sa.supplier
+Require-Bundle: com.sa.BookStore
+

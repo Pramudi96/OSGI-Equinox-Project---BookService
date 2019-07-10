@@ -1,0 +1,34 @@
+package com.sa.stat;
+
+import org.osgi.framework.BundleActivator;
+
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+import com.sa.supplier.SupplierImpl;
+import com.sa.supplier.SupplierStat;
+
+
+public class Activator implements BundleActivator {
+
+	ServiceReference StatReference;
+	
+	@SuppressWarnings("unchecked")
+	public void start(BundleContext Context) throws Exception {
+		 System.out.println("Start Stat");
+		 StatReference = Context.getServiceReference(SupplierImpl.class.getName());
+		 SupplierImpl Supplier = (SupplierImpl) Context.getService(StatReference);
+		 Supplier.displaySupplierBookList();
+				
+				
+				
+				
+	}
+
+	
+	public void stop(BundleContext Context) throws Exception {
+		System.out.println("Stop Stat");
+		Context.ungetService(StatReference);	
+	}
+
+}
